@@ -33,7 +33,7 @@ export const initialState = {
 
     mode: 'build',
 
-e
+
     status: 'building',
     
     stress: {},
