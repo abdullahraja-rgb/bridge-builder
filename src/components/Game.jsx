@@ -198,3 +198,17 @@ function Controls({ budget, currentTool, onToolChange, onTest, onReset, gameMode
         </div>
     );
 }
+// --- 5. MAIN COMPONENT ---
+export default function Game() {
+    const [gameState, dispatch] = useReducer(gameReducer, initialState);
+    const [tool, setTool] = useState('joint'); 
+    const [selectedJoint, setSelectedJoint] = useState(null);
+    const [canvasSize, setCanvasSize] = useState({ width: 800, height: 600 });
+    const [Matter, setMatter] = useState(null);
+
+    const canvasRef = useRef(null);
+    const engineRef = useRef(null);
+    const runnerRef = useRef(null);
+    const bodiesRef = useRef({}); 
+
+    useMatterJS(setMatter);
